@@ -1,0 +1,34 @@
+Today's Agenda:
+   - 2:15 - 3:00 -> Intro on Edtech Platform 
+   - 3:00 - 4:00 -> Core Java Introduction
+   - 4:00 - 4:15 -> Breakout
+   - 4:15 - 4:30 -> Break
+   - 4:30 - 5:15 -> Datatypes and Variables
+   - 5:15 - 5:30 -> Breakout
+   - 5:30 - 6:15 -> Conditional Statements
+   - 6:15 - 6:30 -> Breakout
+
+package:
+what?
+  Is a folder to organize all your codes
+How?
+  Right click->src/main/java-> New Package-> week1.day1 -> finish
+Naming convention:
+  - Package name should always start with lowercase
+
+Class:
+  - It is a testcase
+Naming Convention:
+  - It should start with UpperCase
+
+Java Internals:
+   Java RunTime Engine -    chef
+   Java Code - recipe
+   Java Compiler  - kitchen assistant
+   .class files - recipe book
+      These are the compiled version of Java code ,contains bytecode informations
+   JVM - kitchen staff
+     It executes the bytecode
+   Program Output - Dish      
+     
+  
