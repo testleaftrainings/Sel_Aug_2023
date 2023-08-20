@@ -1,0 +1,70 @@
+Today's Agenda:
+   - 2:15 - 2:30 -> Recap
+   - 2:30 - 3:30 -> Control Statements
+   - 3:30 - 3:45 -> Breakout
+   - 3:45 - 4:00 -> Break
+   - 4:00 - 5:00 -> Methods and Objects
+   - 5:00 - 5:15 -> Breakout
+   - 5:15 - 6:15 -> Arrays
+   - 6:15 - 6:30 -> Breakout
+
+   Operators:
+   Arithmetic Operators:
+     + , - , * , / , % 
+
+   Comparison Operators:
+       <,>,<=,>=,==,!=
+
+   Relational Operators:
+     && , ||
+
+   Jump Statements:
+   1. break
+       - It will stop the iteration and come out of the loop
+   2. continue   
+       - It will skip the current iteration and continue with the loop
+
+
+  Methods:
+    Syntax:
+       1. Access modifier
+       2. return type
+       3. methodName
+       4. input arguments
+
+
+  1. Access Modifier:
+     Naming convention:
+     - lower case
+     Types:   
+       - public
+          * class   -  same class and different classes - yes
+          * package -  same package and different package - yes
+          * project -  same project and different project - yes
+       - private
+            * class   -  same class - yes
+            * package -  same package and different package -No
+            * project -  same project and different project - No
+       - protected
+           
+       - default
+             * class   -  same class - yes
+             * package -  same package - yes and different package -No
+             * project -  same project - No and different project - No 
+
+  2. Return type:
+
+
+Classroom:
+  1. Create one class Calculator
+  2. Create 1 private method as addTwoNumbers() and pass input arguments as int num1,int num2
+      return num1+num2;
+  3. Create method as mul() and pass input argumnets as float num1,int num2
+      return num1*num2
+  4. Create method as sub() with no arguments
+       write a print statement to sub two numbers
+  5. Create another class MyCalculator and create an object for Calculator 
+     and access all the methods             
+     
+
+         
