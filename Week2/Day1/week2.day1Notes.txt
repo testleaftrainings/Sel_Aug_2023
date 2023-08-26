@@ -1,0 +1,62 @@
+Today's Agenda:
+   - 2:30 -  3:30 -> Selenium Introduction
+   - 3:30 -  4:00 -> Launch browser
+   - 4:00 -  4:15 -> Breakout
+   - 4:15 -  4:30 -> Break
+   - 4:30 -  5:15 -> Basic Locators
+   - 5:15 -  5:30 -> Breakout
+   - 5:30 -  6:15 -> Select Dropdown
+   - 6:15 -  6:30 -> Breakout
+  
+ 4.5.0
+    WEbDriverManager 
+4.6.0
+   Selenium manager
+      - It will check your current browser version and download the binary of it
+      - It will set the path of the driver in your local system
+      - win+R -> .cache -> selenium -> win64-> 116 -> binary
+4.11.0
+
+ DOM- Document Object Model
+   Right click ans inspect
+   Press F12 on the keyboard
+   Press ctrl+shift+i
+
+3 things:
+  - tagname
+     ex: input,div,form,p,a,h2...........
+  - attribute
+     ex: id,name,class....
+  - attribute value
+      ex: id="username"
+          class="decorativeSubmit"
+
+Locators: 
+  Locators are used to locate a WebElement in a Webpage
+  To locate an element findElement() is used
+  The return type of findElement() is WebElement
+
+Basic Locators:
+   - id (priority 1)
+   - name (priority 2)
+   - classname (priority 3)
+   - linkText  (priority 4)
+
+
+How to handle dropdown elements in a webpage:
+Step1:
+  -Identify whether the dropdown is inside a select tag
+  -If so -> Locate the dropdown element within the select tag and assign it to a variable
+     WebElement dropDownEle = driver.findElement(By.id("createLeadForm_dataSourceId"));
+Step2:
+   - Instantiate a class called Select  and pass the WebElement
+    Select sec = new Select(dropDownEle);
+Step3:
+   - Select any dropdwon option
+  3 methods:
+    - selectByIndex()
+    - selectByValue()
+    - selectByVisibleText()
+
+
+   
