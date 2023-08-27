@@ -1,0 +1,141 @@
+Today's Agenda:
+      2:30 - 3:00 -> Absolute xpath
+      3:00 - 4:00 -> Basic Xpath
+      4:00 - 4:30 -> Breakout
+      4:30 - 5:30 -> Advanced Xpath
+      5:30 - 6:00 -> Breakout
+      6:00 - 6:30 -> Advanced Xpath
+      6:30 - 6:45 -> Implicit Wait
+Xpath:
+1. Absolute Xpath
+    - It starts with '/'
+    - It starts from the root node
+    - It is not recommended
+    Ex:
+     (/html/body/div[2]/div[2]/div[1]/form/p/input)[1]
+     /html/body/div[2]/div[2]/div[1]/form/p[1]/input
+
+2. Relative Xpath:
+     - It starts with '//'
+     
+  Basic Xpath:
+
+   a)Attribute based Xpath:
+   Syntax:
+     //tagname[@attributename='attributevalue']
+   Example:
+     //input[@id='password']
+     //input[@id='twotabsearchtextbox']
+
+   b)Text Based Xpath:
+   Syntax:
+     //tagname[text()='textvalue']
+   Example:
+     //a[text()='Leads']
+     //a[text()='Create Lead']
+
+   c)Partial attribute based xpath:
+   Syntax:
+     //tagname[contains(@attributename,'attributevalue')]
+   Example:
+    //input[contains(@id,'companyName')]
+
+   d)Partial Text based Xpath:
+   Syntax:
+     //tagname[contains(text(),'textvalue')] 
+   Example:
+     //a[contains(text(),'Create')]
+
+   e)Index Based Xpath:
+   Syntax:
+       (//tagname[contains(@attributename,'attributevalue')])[index]
+   Example:
+        (//input[contains(@id,'firstName')])[2]     
+
+  Advanced Xpath(Axes Based Xpath):
+  1. Parent to Child:
+     Syntax:
+       BasicRelativeXpathforParent/childTagname
+     Example:
+         //form[@id='login']/p[2]
+
+  2. Child to Parent:
+     Syntax:
+       BasicRelativexpathforChild/parent::parenttagname
+     Example:
+       //p[@class='top']/parent::form
+
+  3. GrandParent to GrandChild:
+     Syntax:
+      BasicRelativeXpathforGrandParent//grandchildtagname
+     Example:
+      (//form[@id='login']//input)[3]
+      //form[@id='login']//input[@class='decorativeSubmit']
+
+  4. GrandChild to Grandparent:
+     Syntax:
+       BasicRelativeXpathforGrandchild/ancestor::GrandParenttagname
+     Example:
+       //div[text()='Shruthi']/ancestor::srinivasan
+      //input[@class='decorativeSubmit']/ancestor::form  
+      
+  5. Elder Cousin to Younger Cousin:
+     Syntax:
+       BasicRelativexpathforElderCousin/following::YoungerCousintagname
+     Example:
+       //span[text()='Company Name']/following::input[@id='createLeadForm_companyName']     
+       //span[text()='First name']/following::input
+       //input[@id='username']/following::input
+
+  6. Younger Cousin to Elder Cousin:
+     Syntax:
+       BasicRelativeXpathforYoungerCousin/preceding::ElderCousintagname
+     Example:
+      //input[@id='createLeadForm_firstName']/preceding::input[2]  
+      //input[@id='password']/preceding::input
+
+  7. ElderSibling to YoungerSibling:
+     Syntax:
+       BasicXpathforElderSibling/following-sibling::YoungerSiblingtagname
+     Example:
+       //label[text()='Password']/following-sibling::input
+
+  8. YoungerSibling to ElderSibling:
+     Syntax:
+        BasicXpathforYoungerSibling/preceding-sibling::ElderSiblingtagname
+     Example:
+       //input[@id='username']/preceding-sibling::label   
+
+
+  Classroom Activity:
+    1.Load nykaa.com
+    Write parent to child and child to parent xpath for search field
+    parenttochid:
+      //form[contains(@class,'css')]/input
+    Child to Parent:
+      //input[contains(@name,'search')]/parent::form   
+
+    2. Load Ajio.com
+       Write grandparent to grandchild xpath for search box
+       GrandParent to GrandChild:
+         //div[contains(@class,'scb')]//input
+      
+       GrandChild to GrandParent:
+         //input[@name='searchVal']/ancestor::form
+
+ImplicitlyWait:
+   - It is a global wait
+   - Declare only once
+   - It is applicable for all the findElement() and findElements() in a class you are using implicitywait
+
+   The total time period given is -> 30s
+   -try to locate username -> username -> 2s -> element is available
+   -It will not wait for the remaining 28s
+
+   - locate password-> 5s
+
+   - login -> 7s
+
+   - If it couldnt find an element in the DOM even after the maximum duration of time 
+   - It will throw an exception called NoSuchElementException
+
