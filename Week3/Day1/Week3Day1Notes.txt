@@ -1,0 +1,30 @@
+Today's Agenda:
+   - 2:30 - 3:30 -> Interface
+   - 3:30 - 3:45 -> Breakout
+   - 3:45 - 4:00 -> Break
+   - 4:00 - 4:45 -> Inheritance
+   - 4:45 - 5:00 -> Breakout
+   - 5:00 - 5:30 -> Polymorphism
+   - 5:30 - 5:45 -> Breakout
+   - 5:45 - 6:30 -> Arrays
+
+
+Interface:
+ - Interface is a design patter
+ - It does not have a method body
+ - By default all the ethods in the Interface are called Abstract methods(no implementation)
+ - implements keyword is used to build the relationship between Interface and a class
+ - Cannot create an object for the Interface(Reason: cannot instantiate the Interface)
+ - Multiple Inheritance is done through interfaces
+    One class can implement multiple Interfaces
+
+ - To build a relationship between a class and a class use extends keyword
+ - To build a relationship between an Interface and an Interface use extends keyword
+
+
+Browser related activities:
+   launchbrowser
+   loadUrl
+   verifyTitle
+   close
+   quit
