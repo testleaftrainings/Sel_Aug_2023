@@ -1,0 +1,73 @@
+Today's Agenda:
+   - 2:15 - 3:15 -> Polymorphism
+   - 3:15 - 3:30 -> Breakout
+   - 3:30 - 3:45 -> Interview questions
+   - 3:45 - 4:00 -> Break
+   - 4:00 - 4:45 -> Arrays
+   - 4:45 - 5:00 -> Breakout
+   - 5:00 - 5:45 -> String
+   - 5:45 - 6:00 -> Breakout
+   - 6:00 - 6:10 -> Video
+   - 6:10 - 7:00 -> Collections-List
+   - 7:00 - 7:15 -> Breakout 
+
+
+EdgeDriver,ChromeDriver-> ChromiumDriver
+ 
+ To see the implementation details-> click f3
+ To see the hierarchy-> click f4
+
+PolyMorphism:
+ - Method Overloading
+    - method belonging to a same class
+    - same method name with different input arguments/type
+
+ - Method Overriding
+    - sub class overrides the method behaviour of a super class
+    - by building a relationship
+    - method name should be exactly same 
+    - only the implementation differs
+
+Interview Question:
+1. What is Inheritance. Give some examples in Java,Selenium WebDriver,Framework and tell me how
+   you have applied this in your framework?
+
+   Ans:
+    - Definition
+        A class inheriting the properties of a parent class
+    - Advantages
+       - No Duplicate codes
+       - Reusability
+       - Performance
+    - Examples:
+        Java
+          - Integer extends Number
+        Selenium WebDriver
+          - WebDriver extends SearchContext
+          - ChromeDriver extends ChromiumDriver
+            ChromiumDriver extends RemoteWebDriver
+        Framework
+          - SeleniumBase extends Reporter
+     
+Arrays:
+  int num=9;
+  char logo = 'h';
+  String name="Honda";
+
+  ex: marks - int
+      mentornames - String
+   - In an Array each data will be stored in a particular index
+   - Always the index starts with 0
+
+   int[] nums = {98,78,90,99,97}; 
+   int nums[] = {98,78,90,99,97};   
+
+Limitations:
+  - Arrays cannot grow/shrink in size
+   i.e -> you cannot add an item in an array
+       -> you cannot remove an item from an array
+
+       int[] scores = {98,97,76,87,90};
+       Print all the values in reverse order
+
+
