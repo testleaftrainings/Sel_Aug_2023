@@ -1,0 +1,56 @@
+Today's Agenda:
+    - 2:15 - 2:30 -> Live Quiz
+    - 2:30 - 4:00 -> Collections-List,findElements()
+    - 4:00 - 4:25 -> Breakout
+    - 4:25 - 4:30 -> Break
+    - 4:30 - 5:15 -> Collections-Set
+    - 5:15 - 5:30 -> Breakout
+    - 5:30 - 6:00 -> Constructor
+    - 6:00 - 6:30 -> this,static keyword
+
+
+Java Example:
+  List->Interface extends Collection Interface
+  Abstract class of List -> AbstractList
+  Concrete class of List -> ArrayList
+
+  findElement() -> to locates the first matching element
+  retutn type-> WebElement
+
+  findElements()-> to locate multiple elements 
+  return type -> List<WebElement> an empty List
+
+
+
+Set :
+ -> Interface
+ -> The implementation classes of Set
+     HashSet        - random order
+     LinkedHashSet  - Insertion order
+     TreeSet        - ASCII order
+     
+     Set cannot have duplicate vaues
+     Set has same methods as that of List
+     But Set Interface doesnot have get() -> the order of items depends on the implementation class
+
+     Set<String> set = new HashSet<>();
+
+
+     Constructor:
+      - to initialize the state of an object
+      - Constructor will not have any return type
+      - Constructor name and the classname should be exactly same
+
+      Types of Constructor:
+        - Default Constructor
+        - Parameterized Constructor(Constructor Overloading)
+      Can we call one Constructor from another Constructor?
+         Yes,Constructor Chaining is possible using this
+
+      this:
+      - to differentiate the local variables and the global variables in the current class
+      - refers the current class global variable   
+
+
+
+   
