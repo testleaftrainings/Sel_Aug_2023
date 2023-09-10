@@ -1,0 +1,90 @@
+Today's Agenda:
+   - 2:30 - 3:30 -> Target Locators-Alert
+   - 3:30 - 3:45 -> Breakout
+   - 3:45 - 4:00 -> Break
+   - 4:00 - 4:45 -> Frames
+   - 4:45 - 5:00 -> Breakout
+   - 5:00 - 6:00 -> Window handling
+   - 6:00 - 6:30 -> Breakout
+
+Alert:
+   - It is a modal dialog box
+   - Whenever you find an alert
+        - check whether the alert is inspectable
+        - Alerts are Javascript functions
+Types of Alert:
+  - Simple Alert
+     - only one action is allowed
+     - read the alert text
+     - accept the alert
+   - Confirmation Alert
+      -   
+   - Prompt Alert
+
+  Sweet Alert:
+         
+
+Methods Of Alert Interface:
+    - accept()
+    - dismiss()
+    - getText()
+    - sendKeys()
+Exception:
+    - NoAlertPresentException   
+    - UnhandledAlertException    
+
+Classroom:
+   - Load leafground.com(https://www.leafground.com/alert.xhtml)
+   - click show button under Alert(Prompt Dialog)
+   - pass an input message in the alert text box
+   - read the alert message
+   - accept/dismiss the alert
+   - verify     
+
+Sweet Alert Activity:
+      a)Launch the browser
+      b)Load the url https://www.irctc.co.in/nget/train-search
+      c)Enter MS in ‘From’ textbox
+      d)Enter Cape in ‘To’ textbox
+      e)Click search button 
+      f)Click refresh button
+      g)Click WL and Click BookNow button
+      e)Click No button in the alert
+
+Frames:
+  - How will you identify that an element is inside a frame?
+     - When you inspect an element if it has options like reload frame
+     - iframe tag in the DOM
+     - NoSuchElementException-> Check whether that element is inside a frame or not
+
+3 methods of frame to switch:
+   - frame(int index)
+   - frame(String id)
+   - frame(WebElement ele)
+
+defaultContent()
+driver.switchTo().parentFrame();
+frame1
+  frame2
+   frame3
+     frame4
+      click()
+
+ClassRoom:
+   - Load https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm
+   - Click TryIt button
+   - get the text of the alert
+   - Accept the alert
+   - Verify   
+Window Handling:
+   - getWindowHandle()
+      - return the current window handle
+   - getWindowHandles()
+
+   NoSuchWindowException
+
+   Classroom:
+     Load https://www.irctc.co.in/nget/train-search
+     Click Flights
+     get the title of the child window
+     verify and confirm
