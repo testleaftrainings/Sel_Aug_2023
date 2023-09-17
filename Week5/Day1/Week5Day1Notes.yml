@@ -1,0 +1,120 @@
+Today's Agenda:
+  - 2:30 - 3:30 -> TestNG Introduction
+  - 3:30 - 4:00 -> Sequential Execution
+  - 4:00 - 4:30 -> Breakout
+  - 4:30 - 5:15 -> Parallel Execution
+  - 5:15 - 5:30 -> Breakout
+  - 5:30 - 6:15 -> Annotations
+  - 6:15 - 6:30 -> Breakout
+
+TestNG:
+  - Test NextGeneration
+  - Cedric Beust
+  - Testing/execution Framework
+
+20 -> one by one
+Limitaions:
+  - Execute testcases one by one
+ Expectation:
+   - All the tests together may be sequentially / parallel
+
+Report:
+Expectation
+  - Passed,failed,skipped  
+
+50 testcases
+
+10-Functional
+20-Smoke
+15-Regression
+5- Sanity
+
+Pre-requisite:
+    Plugin
+    dependency
+
+Steps:
+ 1. Convert main method to a normal method    
+      - Remove static keyword
+      - Remove String[] args
+      - Give meaningful methodname
+      - Add @Test in top of the method
+      - import @Test from org.testng.annotations
+    
+How to execute multiple testcases sequentially:
+  - Select the required testcases marked with @Test
+  - Right click-> Click TestNG at the bottom->Click convert to TestNG
+  - A testng.xml wizard will appear
+  - By default-Design tab would be selected 
+  Note: Click Source tab to view the xml file
+  - Finally run all the testcases sequentially and check the status
+
+
+<Suite name="Leaftaps"> -> Collection of items
+  <test name="Leads Module"> -> Collection of tests
+   <classes>
+    <class name="week5.day1.testcase.CreateLead"/>
+    <class name="week5.day1.testcase.EditLead"/>
+   </classes>
+  </test>
+
+  <test name="Accounts Module"> -> Collection of tests
+   <class name="week5.day1.testcase.CreateAccount"/>
+   <class name="week5.day1.testcase.EditAccount"/>
+  </test>
+
+</Suite>
+
+verbose:
+   It is an attribute to get the failure logs in the console
+   default value of verbose is 2
+  
+Report:
+  - After execution right click and refresh the project
+  - test-output will appear
+  - expand test-output folder-> index.html-> right click-> Open with-> System Editor
+  - emailable-report.html
+
+ thread-count:
+   - Is used to control the number of threads to be opened parallely
+   - Default value of thread-count="5"
+Annotations Hierarchy:
+  @BeforeSuite
+     @BeforeTest
+        @BeforeClass
+           @BeforeMethod
+             @Test
+           @AfterMethod
+        @AfterClass
+     @AfterTest
+  @AfterSuite           
+
+
+Before Suite
+
+Before Test
+Before Class
+        Before Method
+       public void preCondition(){
+             
+       }
+             Testcase 1(@Test)
+    After Method
+      
+    Before Method
+              Testcase 2(@Test)
+    After Method
+After Class    
+
+Mandatory annotation in TestNg:
+   @Test
+
+Steps:
+  1. Create a BaseClass and create 2 methods 
+       - preCondition() and annotate with @BeforeMethod
+       - postCondition() and annotate with @AfterMethod
+  2. Declare ChromeDriver driver globally 
+  3. Remove the common steps from all the classes 
+  4. All the subclasses should inherit BaseClass  
+  5. Finally execute from the testng.xml file
+  6. Try to debug to understand the order of execution   
