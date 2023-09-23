@@ -1,0 +1,100 @@
+Today's Agenda:
+
+  2:30 to 3:30  - Static Paramaterization
+  3:30 to 3:45  - Breakout
+  3:45 to 4:00  - Break
+  4:00 to 4:45  - Dynamic Parameterization
+  4:45 to 5:00  - Breakout
+  5:00 to 5:45  - Read Excel
+  5:45 to 6:00  - Breakout
+  6:00 to 6:45  - Common Integration
+  6:45 to 7:15  - Attributes
+
+Types of Parameterization:
+   - Static 
+      
+   - Dynamic  
+
+Steps to achieve Static Parameterization:
+ - Identify the common data
+   ex: url,username,password
+ - In the testng.xml file put all the datas
+ - Add a <parameter> tag and mention the name and the value of the data
+    ex: <parameter name="url" value="http://leaftaps.com/opentaps/control/main"></parameter>
+ - Add @Parameters annotation on the top of the method 
+   Note: Add import statement from org.testng.annotations
+ - Within @Parameters() add all the names mentioned in the xml file
+    ex: @Parameters({"url",""}) 
+ - The sequnece doesnt matter but the name matters  
+ - Add arguments To pass inputs to the preCondition() 
+    ex: public void preCondition(String url)
+ - The sequence matters and the name doesnt matter   
+ - Finally, replace all the hardcoded datas with the input arguments
+ - Make Sure to run the testcases from the testng.xml file.
+
+
+Steps to achieve Dynamic Parameterization:
+   - Identify the datas which is specific to the testcase
+      ex: companyname, firstname,lastname,phonenumber
+   - Create a method sendData() inside the specific class
+   - Inside this method create a String[][] and mention the number of rows and columns
+      ex: String[][] data = new String[2][4];
+   - Push all the datas to the Array 
+   - Finally, return the data and change the return type to String[][]
+   - On the top of sendData() add @DataProvider annotation and give a name for it.
+   - Add dataProvider attribute with @Test and mention the name of the DataProvider.
+   - Pass input arguments for the method and replace all the hardcoded datas with the input arguments.
+
+   @BS
+    @BT
+      @BC
+       @DP(sendData)
+        @BM (precondition)
+          @Test
+        @AM
+      @AC
+    @AT
+  @AS             
+
+Steps to create excelsheet inside data folder:
+  - Right click on the project-> New -> Folder-> give foldername -> Click Finish
+  - Right click on the data folder-> click Show in -> System Explorer -> 
+     inside data folder create new Excel worksheet and give name as CreateLead
+  - Open the excelsheet and enter all the datas and save and close
+  - Refresh the data folder in the eclipse and check whether the excel sheet is appearing.
+
+Read Excel:
+  - Microsoft application
+  - excel workbook
+  - .xls , .xlsx
+
+ Workbook
+   Worksheet
+    Rows
+      Columns(cell)
+
+XSSFWorkBook(mention the path of the workbook)
+  XSSFSheet (get into a specific sheet by index/sheetname)
+     - getSheetAt(int index)
+     - getSheet(String name)
+    XSSFRow (get into a specific row by index)
+      - getRow(int index)
+      XSSFCell (get into a specific cell by index)
+        -getCell(int index)
+   
+ 
+
+
+
+Steps to be done in ReadExcel class:
+ 1. Change main method to a normal static method
+ 2. Create String[][] and mention the rowCount and ColumnCount
+    ex:String[][] data = new String[rowCount][columnCount];
+ 3. Push stringCellClaue to the array
+     ex: data[i-1][j]=stringCellValue;
+ 4. Finally,return the data.
+
+Steps:
+  1. In the testcase inside sendData() call readExcel method from ReadExcel class
+  2. Finally return it and run from the xml file
+
