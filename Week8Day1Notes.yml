@@ -1,0 +1,95 @@
+Today's Agenda:
+  
+    2:30 - 3:15 -> POM Excel Integration
+    3:15 - 3:30 -> Breakout
+    3:30 - 4:30 -> POM With Multilingual applications
+    4:30 - 4:45 -> Breakout
+    4:45 - 5:15 -> POM - cucumber
+    5:15 - 6:30 -> ThreadLocal Integration
+
+Excel Integration:
+Prerequisites:
+1. Data folder-> excel sheets
+2. To read data from excel-> ReadExcel
+
+
+Steps:
+1. Create data folder inside the project and create excel sheets
+2. Create utils package 
+     -Create a class called ReadExcel
+3. Create sendData() in the BaseClass and annotate with @DataProvider
+     - Call ReadExcel class and return it
+4. In the testcases With @Test use dataprovider attribute 
+5. Pass input arguments like username and password
+6. Create setValues() in the RunLogin class and set the excelfilename   and annotate with @BeforeTest\
+7. In the LoginPage pass input arguments for the method and replace the hardcoded data.        
+
+Steps to integrate  multilingual with POM:
+========================================
+ 1. Create config.properties under src/main/resources
+       rightclick-> src/main/resources-> Click New-> Other -> File -> config.properties->Finish
+ 2. In the BaseClass inside preCondition() 
+     FileInputStream fis = new FileInputStream("./src/main/resources/config.properties");
+		prop = new Properties();
+		prop.load(fis);
+ 3. Declare public static Properties prop;
+ 4. In the enterUsername() get the propertyValue and pass it in the sendKeys()
+       public LoginPage enterUsername() {
+		String uName = prop.getProperty("username");
+		driver.findElement(By.id("username")).sendKeys(uName);
+		return this;
+	}
+
+   property file:
+   #key value
+
+#credentials
+username=Demosalesmanager
+password=crmsfa
+
+#locators
+leads=//a[text()='Leads']
+createLead=Create Lead  
+
+configfr.properties:
+#key value
+
+#credentials
+username=DemoCSR2
+password=crmsfa
+
+#locators
+leads=Prospects
+createLead=Créer un prospect
+
+
+driver as static -> sequential execution is possible
+-> testNG  
+-> cucumber
+
+driver  -> parallel execution 
+-> testNG
+    -constructor declaration 
+-> cucumber
+    -will not support constructor
+
+common configuration which supports 
+  - testng
+  - cucumber 
+    to execute sequentiall as well as parallel   
+
+
+ThreadLocal Configuration:
+==========================
+
+  
+Encapsulation:
+  To access a private variable you can use getter and setter method
+
+   set():
+     Sets the current thread's copy of this thread-local variableto the specified value
+   get()
+      Returns the value in the current thread's copy of thisthread-local variable
+
+
+
