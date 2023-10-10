@@ -1,0 +1,105 @@
+Today's Agenda:
+
+   2:30 -3:30  -> Exception Handling
+   3:30 -3:45  -> Break
+   3:45 - 4:15 -> Extent Report
+   4:45 - 6:00 -> Extent report Integration
+   6:00 - 6:30 -> TestNg-Attributes
+
+Exception:
+   Abnormal behaviour which disrupts the program execution
+
+Types of Exception:
+   - Compile Time Exception
+         Checked Exceptions
+   - RunTimeException
+        Unchecked Exceptions
+ - All the Selenium Exceptions are RunTime Exceptions
+       NoSuchElementException
+       StaleElementReferenceException
+       NoSuchWindowException
+       NoAlertPresentException
+       ElementNotInteractableException
+Exception Handling:
+ -Apply try/catch block
+ -catch block will be executed only if there is an exception
+ -We cannot have try block alone
+ -We cannot have catch block alone
+ -All the Exceptions are classes
+ -Exception is the super class for all the Exceptions
+ -A try block can have multiple catch blocks
+
+    try        try      try 
+    catch      catch       try
+               catch       catch
+               catch    catch
+
+
+finally:
+   finally block follows the try catch block
+   It will execute regardless of any exception is thrown or not
+
+throw:
+It is a keyword used to explicitly throw an exception
+
+Extent Report: aventstack
+Dependency:
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>3.1.5</version>
+</dependency>
+
+- Generate HTML automation summary report
+- can attach screenshot for each step
+- can have report based onn different author
+- can have report based on different category
+- Consolidated dashboard with graphs
+
+Extent classes:
+==============
+ ExtentHTMLReporter
+ ExtentReport
+ ExtentTest
+ MediaEntityBuilder
+ 
+
+  Steps to integrate ExtentReport with POM:
+  ========================================
+   1. Create startReport() in the BaseClass and annotate with @BeforeSuite
+        - Add all the common codes(Step1-Step3)
+   2. Declare the ExtentReports globally 
+   3. Create stopReport() and annotate with @AfterSuite
+       - Add extent.flush() 
+   4. Create testCaseDetails() and annotate with @BeforeClass
+        - Add testname,testDescription,testAuthor,testCategory using ExtentTest 
+        - Declare all the variables globally
+   5. All the values has to be set in the testcase level at setValues() which
+      is annotated with @BeforeTest     
+
+img"+ranNum+"
+
+   Annotation:
+     @Beforesuite  - startReport()
+
+        @BeforeTest  - setValues()
+
+          @BeforeClass - testcaseDetails()
+
+            @DataProvider  - sendData()
+
+              @BeforeMethod - preCondition()
+
+                  @Test     - testcase()
+
+              @AfterMethod  -postCondition()
+
+          @AfterClass       - NIL
+
+        @AfterTest          - NIL
+
+    @Aftersuite     - stopReport()                     
+
+
+
