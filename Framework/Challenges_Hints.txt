@@ -1,0 +1,17 @@
+Automation Challenges in Selenium: Can interact only with browsers
+----------------------------------
+1. Can not interact with Window dialog box
+		- Use sendKeys() to attach the file without interacting with window dialog
+		
+2. Can not able to interact with the WebElements using selenium methods
+		- Use java script code for interaction
+		
+3. Captcha 	/ OTP
+		1. We can ask the developement team to have a static value for captcha / OTP ( abcde / 1234)
+		2. We can ask the development team to disable the captcha / OTP in the automation environment
+		
+4. StaleElementRefernceException
+		Refer Interview Questions in EdTech platform
+
+5. Dynamic Data for the testcases
+		Using Java faker library, we can generate dynamic test data and integrate with test cases
